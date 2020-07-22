@@ -1,30 +1,31 @@
+require 'open-uri'
 require 'pry'
 require 'nokogiri'
-require 'open-uri'
-
 
 
 class Scraper
 
 
 
-
-  def self.scrape_from_list_page(url) #scrapes site for information about each game
-
-    html = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox')) #scrape site and convert to HTML
+  def self.scrape_from_list_page(url)
     games = []
     counter = 0
+    page = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
+    page.css("td.clamp-summary-wrap").each do |game| #iterates over each game, collecting score, description, title, and platform
+      game_details = {}
+      game_details[:score] = game.css("div.clamp-score-wrap div.metascore_w.large.game.positive").text.strip
+      game_details[:description] = game.css("div.summary").text.strip
+      game_details[:title] = game.css("a.title").text.strip
+      game_details[:platform] = game.css("div.clamp-details div.platform span.data").text.strip
+      games << game_details
+    end
+    games
 
-      html.css("table.clamp-list td").each do |game| #each enumerator to gather information about each game
-          game_details = {}
-          game_details[:score] = game.css()
-          game_details[:name] = game.css()
-          game_details[:description] = game.css()
-          games << game_details
-          binding.pry
-      end
-    puts games
+
   end
+
+
+
 
 
 
