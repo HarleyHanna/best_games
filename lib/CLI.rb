@@ -43,17 +43,49 @@ class CLI
     @input = @input.to_i
   end
 
+  def create_and_list(url)
+    Scraper.create_games_from_list(url)
+    Game.game_list
+  end
+
   #Takes input, goes to Scraper class and, based on input, gets a list of game objects
   def list_games
     if @input == 1
-      Scraper.create_games_from_list('https://www.metacritic.com/browse/games/genre/metascore/action/all')
-      Game.game_list
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/action/all')
     elsif @input == 2
-      # get list of Adventure games from scraper class and output
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/adventure/all')
     elsif @input == 3
-      # get list of Fighting games from Scraper class and output
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/fighting/all')
     elsif @input == 4
-      # get list of FPS games from Scraper class and output
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/first-person/all')
+    elsif @input == 5
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/flight/all')
+    elsif @input == 6
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/party/all')
+    elsif @input == 7
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/platformer/all')
+    elsif @input == 8
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/puzzle/all')
+    elsif @input == 9
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/racing/all')
+    elsif @input == 10
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/real-time/all')
+    elsif @input == 11
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/role-playing/all')
+    elsif @input == 12
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/simulation/all')
+    elsif @input == 13
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/sports/all')
+    elsif @input == 14
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/strategy/all')
+    elsif @input == 15
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/third-person/all')
+    elsif @input == 16
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/turn-based/all')
+    elsif @input == 17
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/wargame/all')
+    elsif @input == 18
+      create_and_list('https://www.metacritic.com/browse/games/genre/metascore/wrestling/all')
     end
   end
 end
