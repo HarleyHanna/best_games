@@ -13,7 +13,7 @@ class CLI
 
   end
 
-  #lists genres (use here doc later)
+  #lists genres
   def list_genres
 
     puts "1. Action"
