@@ -27,10 +27,9 @@ class Scraper
     games
   end
 
-  def self.create_games_from_list
-
-    self.scrape_from_list_page('https://www.metacritic.com/browse/games/genre/metascore/action/all').each do |game|
-      Game.new(game[:name], game[:description], game[:score], game[:platform])
+  def self.create_games_from_list(url)
+    self.scrape_from_list_page(url).each do |game|
+      Game.new(game[:title], game[:description], game[:score], game[:platform])
     end
 
   end

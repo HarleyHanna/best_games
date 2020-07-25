@@ -16,6 +16,18 @@ class Game
     @@all
   end
 
+  def self.destroy_all
+    @@all.clear
+  end
+
+
+  def self.game_list
+    self.all.each do |game|
+      puts "Name: #{game.name}\nDescription: #{game.description}\nPlatform: #{game.platform}\nScore: #{game.score}"
+    end
+  end
+
+
 
 
 end

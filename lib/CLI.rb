@@ -8,6 +8,7 @@ class CLI
     puts "Welcome to Best Games."
     puts "What genre of game are you looking for today?"
     list_genres
+    input_to_num
     list_games
 
   end
@@ -39,20 +40,20 @@ class CLI
 
   #converts input from string to integer
   def input_to_num
-    input = @input.to_i
+    @input = @input.to_i
   end
 
   #Takes input, goes to Scraper class and, based on input, gets a list of game objects
   def list_games
-    if input == 1
-      # get list of action games from Scraper class and output
-    elsif input == 2
+    if @input == 1
+      Scraper.create_games_from_list('https://www.metacritic.com/browse/games/genre/metascore/action/all')
+      Game.game_list
+    elsif @input == 2
       # get list of Adventure games from scraper class and output
-    elsif input == 3
+    elsif @input == 3
       # get list of Fighting games from Scraper class and output
-    elsif input == 4
+    elsif @input == 4
       # get list of FPS games from Scraper class and output
     end
   end
-
 end
