@@ -7,7 +7,7 @@ require 'nokogiri'
 class Scraper
 
 
-
+  #scrapes from provided website and gathers information about the top 10 games from website
   def self.scrape_from_list_page(url)
     games = []
     counter = 0
@@ -27,6 +27,7 @@ class Scraper
     games
   end
 
+  #Takes each game from scrape_from_list_page method and greates a new game instance with each attribute gathered from site
   def self.create_games_from_list(url)
     self.scrape_from_list_page(url).each do |game|
       Game.new(game[:title], game[:description], game[:score], game[:platform])

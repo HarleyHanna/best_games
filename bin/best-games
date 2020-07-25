@@ -2,4 +2,5 @@
 
 require_relative '../lib/environment.rb'
 
+#cretes new CLI instance and calls call method
 CLI.new.call

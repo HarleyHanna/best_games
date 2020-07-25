@@ -13,7 +13,7 @@ class CLI
 
   end
 
-  #lists genres
+  #lists_genres that users can choose from
   def list_genres
 
     puts "1. Action"
@@ -43,12 +43,13 @@ class CLI
     @input = @input.to_i
   end
 
+  #goes to Scraper class and gathers information based on URL provided, lists games from Game class
   def create_and_list(url)
     Scraper.create_games_from_list(url)
     Game.game_list
   end
 
-  #Takes input, goes to Scraper class and, based on input, gets a list of game objects
+  #Takes input and uses create_and_list method to give the user information
   def list_games
     if @input == 1
       create_and_list('https://www.metacritic.com/browse/games/genre/metascore/action/all')
