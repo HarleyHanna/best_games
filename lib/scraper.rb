@@ -1,7 +1,8 @@
+require_relative './game.rb'
+require_relative './environment.rb'
 require 'open-uri'
 require 'pry'
 require 'nokogiri'
-
 
 class Scraper
 
@@ -20,14 +21,13 @@ class Scraper
       games << game_details
     end
     games
-
-
   end
 
+  def self.create_games_from_list
 
+    self.scrape_from_list_page('https://www.metacritic.com/browse/games/genre/metascore/action/all').each do |game|
+      Game.new(game[:name], game[:description], game[:score], game[:platform])
+    end
 
-
-
-
-
+  end
 end

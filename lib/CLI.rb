@@ -1,3 +1,5 @@
+require_relative './environment'
+
 class CLI
 
   #calls all methods and initial greeting
@@ -52,6 +54,5 @@ class CLI
       # get list of FPS games from Scraper class and output
     end
   end
-
 
 end
