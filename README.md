@@ -1,8 +1,6 @@
 # BestGames
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/best_games`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+BestGames gives you a list of 18 different video games genres and lets you choose one. Once you choose a genre, you will be provided the top 10, highest rated games from that genre, rated by critics across the internet.
 
 ## Installation
 
