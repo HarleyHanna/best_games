@@ -26,7 +26,7 @@ class Game
   #lists out all Games in class variable @@all
   def self.game_list
     self.all.each do |game|
-      puts "Name: #{game.name}\nDescription: #{game.description}\nPlatform: #{game.platform}\nScore: #{game.score}"
+      puts "Name: #{game.name}\nDescription: #{game.description}\nPlatform: #{game.platform}\nScore: #{game.score}\n \n"
     end
   end
 
