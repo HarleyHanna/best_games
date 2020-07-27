@@ -29,8 +29,4 @@ class Game
       puts "Name: #{game.name}\nDescription: #{game.description}\nPlatform: #{game.platform}\nScore: #{game.score}\n \n"
     end
   end
-
-
-
-
 end

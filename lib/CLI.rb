@@ -6,15 +6,17 @@ class CLI
   def call
 
     puts "Welcome to Best Games."
-    puts "What genre of game are you looking for today?"
+    puts "What genre of game are you looking for?"
     list_genres
     input_to_num
     list_games
     Game.destroy_all
-    puts "\nWould you like to select another Genre?(y/n)"
+    puts "Would you like to select another Genre?(y/n)"
     input = gets.strip
     if input == 'y'
       CLI.new.call
+    elsif input == 'n'
+      puts "Thank you for using Best Games."
     end
   end
 
@@ -92,6 +94,9 @@ class CLI
       create_and_list('https://www.metacritic.com/browse/games/genre/metascore/wargame/all')
     elsif @input == 18
       create_and_list('https://www.metacritic.com/browse/games/genre/metascore/wrestling/all')
+    elsif (1..18).include?(@input) == false
+      puts "Please enter a valid number (1-18)"
+      CLI.new.call
     end
   end
 end
