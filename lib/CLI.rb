@@ -10,7 +10,12 @@ class CLI
     list_genres
     input_to_num
     list_games
-
+    Game.destroy_all
+    puts "\nWould you like to select another Genre?(y/n)"
+    input = gets.strip
+    if input == 'y'
+      CLI.new.call
+    end
   end
 
   #lists_genres that users can choose from
