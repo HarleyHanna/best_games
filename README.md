@@ -1,6 +1,6 @@
 # BestGames
 
-BestGames gives you a list of 18 different video games genres and lets you choose one. Once you choose a genre, you will be provided the top 10, highest rated games from that genre, rated by critics across the internet.
+BestGames gives you a list of 18 different video games genres and lets you choose one. Once a genre is chosen, you will be provided with the top 10 highest rated games from that genre.
 
 ## Installation
 
@@ -17,10 +17,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install best_games
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
