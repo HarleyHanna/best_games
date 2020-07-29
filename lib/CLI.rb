@@ -36,7 +36,7 @@ class CLI
     puts "11. Role-Playing"
     puts "12. Simulation"
     puts "13. Sports"
-    puts "14. Stategy"
+    puts "14. Strategy"
     puts "15. Third-Person Shooter"
     puts "16. Turn-Based Strategy"
     puts "17. Wargames"
