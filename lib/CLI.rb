@@ -36,7 +36,7 @@ class CLI
     puts "11. Role-Playing"
     puts "12. Simulation"
     puts "13. Sports"
-    puts "14. Strategy"
+    puts "14. Stategy"
     puts "15. Third-Person Shooter"
     puts "16. Turn-Based Strategy"
     puts "17. Wargames"
@@ -54,6 +54,12 @@ class CLI
   def create_and_list(url)
     Scraper.create_games_from_list(url)
     Game.game_list
+    puts "If you would like more information about a specific game, enter the game's number."
+    input = gets.strip
+    input = input.to_i
+    if (1..18).include?(input) == true
+      Game.game_list_detail(input)
+    end
   end
 
   #Takes input and uses create_and_list method to give the user information

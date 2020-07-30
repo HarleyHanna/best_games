@@ -25,8 +25,18 @@ class Game
 
   #lists out all Games in class variable @@all
   def self.game_list
+    counter = 1
     self.all.each do |game|
-      puts "Name: #{game.name}\nDescription: #{game.description}\nPlatform: #{game.platform}\nScore: #{game.score}\n \n"
+      puts "#{counter}. #{game.name}\n"
+      counter += 1
     end
   end
+
+  def self.game_list_detail(input)
+      array = self.all
+      input -= 1
+      game = array[input]
+      puts "\nName: #{game.name}\nDescription: #{game.description}\nPlatform: #{game.platform}\nScore:#{game.score}\n\n"
+  end
+
 end
