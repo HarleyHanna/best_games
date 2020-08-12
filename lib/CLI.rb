@@ -14,7 +14,7 @@ class CLI
     puts "Would you like to select another Genre?(y/n)"
     input = gets.strip
     if input == 'y'
-      CLI.new.call
+      call
     elsif input == 'n'
       puts "Thank you for using Best Games."
     end
@@ -53,13 +53,28 @@ class CLI
   #goes to Scraper class and gathers information based on URL provided, lists games from Game class
   def create_and_list(url)
     Scraper.create_games_from_list(url)
-    Game.game_list
+    game_list
     puts "If you would like more information about a specific game, enter the game's number."
     input = gets.strip
     input = input.to_i
     if (1..18).include?(input) == true
       Game.game_list_detail(input)
     end
+  end
+
+  #lists out all instances of Game in the Game class variable @@all
+  def game_list
+    Game.all.each.with_index(1) do |game, index|
+      puts "#{index}. #{game.name}\n"
+    end
+  end
+
+  #Lists details about game, taking in one argument of input from user
+  def self.game_list_detail(input)
+      array = Game.all
+      input -= 1
+      game = array[input]
+      puts "\nName: #{game.name}\nDescription: #{game.description}\nPlatform: #{game.platform}\nScore:#{game.score}\n\n"
   end
 
   #Takes input and uses create_and_list method to give the user information
